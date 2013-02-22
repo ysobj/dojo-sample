@@ -10,9 +10,8 @@
     <script src="dojo/dojo.js"
       data-dojo-config="async: true"></script>
     <script>
-      require(['dojo/dom','dojo/domReady!'], function(dom){
-        var x = dom.byId('greeting');
-        x.innerHTML = 'Hello World';
+      require(['ysobj/hello'],function(hello){
+        hello.change();
       });
     </script>
   </body>
