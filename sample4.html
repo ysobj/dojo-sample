@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tutorial: Hello Dojo!</title>
+  </head>
+  <body>
+    <h1 id="greeting">Hello</h1>
+    <h1 id="greetingJa">こんにちは</h1>
+    <!-- load Dojo -->
+    <script src="dojo/dojo.js"
+      data-dojo-config="async: true"></script>
+    <script>
+      require(['dojo/dom','dojo/aspect','dojo/domReady!'], function(dom,aspect){
+        var signal = aspect.after(dom, 'byId', function(el){
+          return document.getElementById("greetingJa");
+        });
+        var x = dom.byId('greeting');
+        x.innerHTML += ' World';
+
+        //adviseを無効化
+        signal.remove();
+
+        x = dom.byId('greeting');
+        x.innerHTML += ' World';
+      });
+    </script>
+  </body>
+</html>
