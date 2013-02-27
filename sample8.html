@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tutorial: Hello Dojo!</title>
+  </head>
+  <body>
+    <h1 id="greeting">Hello</h1>
+    <h1 class="hoge">こんにちは</h1>
+    <h1 class="hoge">nihao</h1>
+    <h1 data-hoge='test'>Bonjour</h1>
+    <div><span class="hoge">ほげ</span></div>
+    <div data-hoge='abcde'>foo</div>
+    <div data-hoge='abc def'>bar</div>
+    <div data-hoge='def ghi'>baz</div>
+    <form action="#">
+      <input type="checkbox" checked="checked" />
+      <input type="checkbox" />
+      <input type="text" disabled="true" />
+      <input type="text" id="qry" />
+      <button id="btnQuery">query</button>
+    </form>
+    <!-- load Dojo -->
+    <script src="dojo/dojo.js"
+      data-dojo-config="async: true"></script>
+    <script>
+      require(['dojo/dom','dojo/on','dojo/query','dojo/_base/array','dojo/domReady!'], function(dom,on,query,arr){
+        on(dom.byId('btnQuery'), 'click', function(){
+          var queryStr = dom.byId('qry').value;
+          console.log(queryStr);
+          arr.forEach(query(queryStr), function(el){
+            console.log(el);
+          });
+        });
+
+      });
+    </script>
+  </body>
+</html>
