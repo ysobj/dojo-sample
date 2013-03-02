@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tutorial: Hello Dojo!</title>
+  </head>
+  <body>
+    <!-- load Dojo -->
+    <textarea id="area"></textarea>
+    <script src="dojo/dojo.js"
+      data-dojo-config="async: true"></script>
+    <script>
+      require(['dojo/dom','dojo/request','dojo/query','dojo/NodeList-data'], function(dom,request,query){
+        request('sample9.xml', {handleAs: 'xml'}).then(
+        function(data){
+          query('record',data).forEach(
+            function(tmp){
+              var area = dom.byId('area');
+              area.value += tmp.childNodes[0].nodeValue;
+            }
+          );
+        }
+        );
+      });
+    </script>
+  </body>
+</html>

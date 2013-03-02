@@ -1,0 +1,11 @@
+<response>
+  <result>success</result>
+  <size>5</size>
+  <data>
+    <record id="r1" >あいうえお</record>
+    <record id="r2" >かきくけこ</record>
+    <record id="r3" >さしすせそ</record>
+    <record id="r4" >たちつてと</record>
+    <record id="r5" >なにぬねの</record>
+  </data>
+</response>
